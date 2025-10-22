@@ -31,7 +31,7 @@ const Index = () => {
   ];
 
   const stats = [
-    { number: "25+", label: "High School Clubs" },
+    { number: "40+", label: "High School Clubs" },
     { number: "500+", label: "Active Students" },
     { number: "15", label: "Industry Partners" },
     { number: "$250K", label: "Annual Funding" },
