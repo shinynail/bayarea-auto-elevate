@@ -17,21 +17,29 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-md">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 group">
-            <Wrench className="h-8 w-8 text-accent group-hover:rotate-12 transition-transform duration-300" />
-            <span className="text-xl font-bold text-foreground">BAAEC</span>
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/40 shadow-lg">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <Wrench className="h-9 w-9 text-primary group-hover:rotate-12 transition-all duration-500" />
+              <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent">BAAEC</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
               <Link key={item.path} to={item.path}>
                 <Button
-                  variant={location.pathname === item.path ? "default" : "ghost"}
-                  className="transition-all duration-300"
+                  variant={location.pathname === item.path ? "secondary" : "ghost"}
+                  size="sm"
+                  className={`transition-all duration-300 ${
+                    location.pathname === item.path 
+                      ? "bg-secondary text-foreground" 
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {item.label}
                 </Button>
@@ -41,7 +49,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 hover:bg-secondary/60 rounded-full transition-colors duration-300"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -55,7 +63,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
+          <div className="md:hidden py-4 animate-fade-in backdrop-blur-xl">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -63,8 +71,8 @@ const Navigation = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Button
-                  variant={location.pathname === item.path ? "default" : "ghost"}
-                  className="w-full justify-start mb-2"
+                  variant={location.pathname === item.path ? "secondary" : "ghost"}
+                  className="w-full justify-start mb-2 transition-all duration-300"
                 >
                   {item.label}
                 </Button>
