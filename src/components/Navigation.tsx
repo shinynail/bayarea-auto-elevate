@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import baaecLogo from "@/assets/baaec-logo.png";
+import baaecIcon from "@/assets/baaec-icon.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -24,9 +24,9 @@ const Navigation = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
               <img 
-                src={baaecLogo} 
-                alt="BAAEC Logo" 
-                className="h-12 w-12 group-hover:scale-110 transition-all duration-500"
+                src={baaecIcon} 
+                alt="BAAEC - Wrench and Piston" 
+                className="h-10 w-10 group-hover:rotate-12 transition-all duration-500"
               />
               <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
