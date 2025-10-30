@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import baaecIcon from "@/assets/baaec-icon.png";
+import LogoIcon from "@/components/LogoIcon";
 
 const Navigation = () => {
   const location = useLocation();
@@ -23,10 +23,10 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <img 
-                src={baaecIcon} 
-                alt="BAAEC - Wrench and Piston" 
-                className="h-14 w-14 group-hover:rotate-12 transition-all duration-500 drop-shadow-lg"
+              <LogoIcon 
+                size={64}
+                alt="BAAEC - Wrench and Piston"
+                className="h-16 w-16 object-contain group-hover:rotate-12 transition-all duration-500 drop-shadow-lg"
               />
               <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
