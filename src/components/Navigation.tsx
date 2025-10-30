@@ -26,7 +26,7 @@ const Navigation = () => {
               <img 
                 src={baaecIcon} 
                 alt="BAAEC - Wrench and Piston" 
-                className="h-10 w-10 group-hover:rotate-12 transition-all duration-500"
+                className="h-14 w-14 group-hover:rotate-12 transition-all duration-500 drop-shadow-lg"
               />
               <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
